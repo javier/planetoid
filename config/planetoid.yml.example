@@ -5,20 +5,20 @@
 development: &development
     
   :admin:
-    :login: administrator
-    :password: 12341234
+    :login: admin
+    :password: XXXXXXX
 
   :site:
-    :title: Planetoid
-    :description: A feed aggregator for a small (or not so small) community
-    :keywords: planetoid, planet, community, feeds, blogs
+    :title: Planeta ASPgems
+    :description: feed aggregator for the members of ASPgems
+    :keywords: aspgems, planet, community, feeds, blogs, ruby on rails, madrid, spain, ruby, rails
     :feed_url: 
     :header:
       :title: Header
-      :content: A header is a good place to explain your mission to the world, how to contact you, stuff like that.
+      :content: This is the planet for the blogs of all the members of aspgems. Subscribe to this page to get all the updates in a single feed
     :footer:
       :title: Footer
-      :content: A footer is a good place to put some credits on your site, a copyleft notice, some links, etc.
+      :content: copyright 2009 ASPgems
 
   :layout:
     :home:

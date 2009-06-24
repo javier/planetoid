@@ -1,7 +1,7 @@
-<div class="span-7 colborder">
+<div class="span-24 last">
   <h2><%= PLANETOID_CONF[:layout][:entries][:title] %></h2>
 </div>
-<div class="span-15 last">
+<div class="span-22 prepend-1 append-1 last">
 	<% @entries.each do |entry| %>
 		<%= render :partial => 'entries/entry', :locals => {:entry => entry} %>
 	<% end %>

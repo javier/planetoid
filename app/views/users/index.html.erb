@@ -1,18 +1,5 @@
-<div class="span-7">
+<div class="span-24 last">
   <h2>Members</h2>
 </div>
 
-<div class="span-15 leftborder last">
-	<% @users.each do |user| %>
-		<%= render :partial => 'users/user', :locals => { :user => user } %>
-		<%= "<hr />" if user != @users.last %>
-	<% end %>
-
-	<% if admin? %>
-		<br class="clear" />
-		<p>
-			<%= link_to 'New member', new_user_path %>
-		</p>
-	<% end %>
-</div>
-
+<%= render :partial => 'users/list', :locals=>{:users=>@users} unless @users.empty? %>

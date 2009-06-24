@@ -1,12 +1,14 @@
-<div class="span-7">
-  <h2>Members</h2>
-</div>
-
-<div class="span-15 leftborder last">
-	<% @users.each do |user| %>
-		<%= render :partial => 'users/user', :locals => { :user => user } %>
-		<%= "<hr />" if user != @users.last %>
-	<% end %>
-</div>
-<hr class="space" />
-<hr/>
+<% users.in_groups_of(2).each do |user_row| %>
+	<div class="span-11 prepend-1"> 
+			<%user=user_row[0] %>
+			<%= render :partial => 'users/user', :locals => { :user => user } %>
+	</div>
+	<div class="span-11 append-1 last"> 
+		<%user=user_row[1] %>
+		<%= render :partial => 'users/user', :locals => { :user => user } unless user.nil?%>
+	</div>
+	<div class='span-24 last'>
+		<hr/>
+	</div>		
+<%end%>	
+	

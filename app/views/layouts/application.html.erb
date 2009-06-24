@@ -16,7 +16,23 @@
 
 <body>
 	<div class="container">  
-		<%= render :partial => 'shared/title' %>
+	     <div id="top">
+	      <ul class="links-superior">
+	      	<%=link_to 'home', root_url, :class=>"links-superior" %><span class="separator">|</span>
+	      	<%=link_to 'members', users_url, :class=>"links-superior" %><span class="separator">|</span>
+			<%=link_to 'all posts', entries_url, :class=>"links-superior" %><span class="separator">|</span>
+			<%=link_to 'blog list', feeds_url, :class=>"links-superior" %><span class="separator">|</span>
+	        <a href="http://aspgems.com" class="links-superior">aspgems home</a><span class="separator">
+	      </ul>
+	    </div>
+	</div>
+	<div class="container" id="logo-area">	
+	    <div class="span-8"><%=link_to image_tag('aspgems-blog.png', :alt=>'planeta gems', :title=>'planeta gems'), root_url%></div>
+		<div class="span-15 last"><%= render :partial => 'shared/title' %></div>
+	</div>
+
+
+	<div class="container contenidos">
 		<%= render :partial => 'shared/header' if PLANETOID_CONF[:layout][:home][:show_header] %>
 		<%= yield %>
 		<%= render :partial => 'shared/footer'  if PLANETOID_CONF[:layout][:home][:show_footer] %>

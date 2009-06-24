@@ -1,3 +1,7 @@
+This is a fork of the project planetoid by jaime iniesta
+
+This fork is mainly a cosmetic change to set a planet for the blog of aspgems people
+
 = Planetoid
 
 Planetoid is a lightweight planet, for small communities who want to aggregate their feeds and projects in one single place.
