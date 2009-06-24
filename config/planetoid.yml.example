@@ -6,7 +6,7 @@ development: &development
     
   :admin:
     :login: admin
-    :password: XXXXXXX
+    :password: wadus
 
   :site:
     :title: Planeta ASPgems
@@ -38,6 +38,12 @@ development: &development
 
   :google:
     :analytics:
+    
+  :twitter:
+    :send_updates: false
+    :update_prefix: "New Post!"
+    :user: wadus
+    :password: wadus
         
 test:
     <<: *development
