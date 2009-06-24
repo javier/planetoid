@@ -15,8 +15,8 @@
 </head>
 
 <body>
-	<div class="container">  
-	     <div id="top">
+	<div class="container">		  
+	     <div id="top" class="span-24 last">
 	      <ul class="links-superior">
 	      	<%=link_to 'home', root_url, :class=>"links-superior" %><span class="separator">|</span>
 	      	<%=link_to 'members', users_url, :class=>"links-superior" %><span class="separator">|</span>
@@ -28,7 +28,7 @@
 	</div>
 	<div class="container" id="logo-area">	
 	    <div class="span-8"><%=link_to image_tag('aspgems-blog.png', :alt=>'planeta gems', :title=>'planeta gems'), root_url%></div>
-		<div class="span-15 last"><%= render :partial => 'shared/title' %></div>
+		<div class="span-16 last"><%= render :partial => 'shared/title' %></div>
 	</div>
 
 
