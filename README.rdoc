@@ -17,7 +17,7 @@ Also, Planetoid requires the following gems:
 
 You can install these gems manually or running:
 
-  sudo rake:gems:install
+  sudo rake gems:install
 
 = Installation notes
 
