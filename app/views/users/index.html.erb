@@ -3,3 +3,12 @@
 </div>
 
 <%= render :partial => 'users/list', :locals=>{:users=>@users} unless @users.empty? %>
+
+<div class="span-24 last">
+<% if admin? %>
+		<br class="clear" />
+		<p>
+			<%= link_to 'New member', new_user_path %>
+		</p>
+	<% end %>
+</div>
