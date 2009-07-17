@@ -1,10 +1,14 @@
-<% users.in_groups_of(2).each do |user_row| %>
-	<div class="span-11 prepend-1"> 
+<% users.in_groups_of(3).each do |user_row| %>
+	<div class="span-8"> 
 			<%user=user_row[0] %>
 			<%= render :partial => 'users/user', :locals => { :user => user } %>
 	</div>
-	<div class="span-11 append-1 last"> 
+	<div class="span-8"> 
 		<%user=user_row[1] %>
+		<%= render :partial => 'users/user', :locals => { :user => user } unless user.nil?%>
+	</div>
+	<div class="span-8 last"> 
+		<%user=user_row[2] %>
 		<%= render :partial => 'users/user', :locals => { :user => user } unless user.nil?%>
 	</div>
 	<div class='span-24 last'>
