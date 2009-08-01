@@ -44,12 +44,12 @@ namespace :deploy do
 
   desc "Enables maintenance mode in the app"
   task :maintenance_on, :roles => :app do
-    run "cp current/public/system/maintenance.html.disabled current/public/system/maintenance.html"
+    run "cp #{shared_path}/system/maintenance.html.disabled #{shared_path}/system/maintenance.html"
   end
 
   desc "Disables maintenance mode in the app"
   task :maintenance_off, :roles => :app do
-    run "rm current/public/system/maintenance.html"
+    run "rm #{shared_path}/system/maintenance.html"
   end
 end
 
