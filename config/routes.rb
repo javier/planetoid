@@ -7,7 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :entries
   map.resources :feeds
-  map.resources :users, :as => 'members'
+  map.resources :users, :as => 'members', :collection=>{:slideshows=>:get}
 
   # The priority is based upon order of creation: first created -> highest priority.
 

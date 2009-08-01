@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :admin_required, :except => [:index, :show]
+  before_filter :admin_required, :except => [:index, :show, :slideshows]
     
   # GET /users
   def index
@@ -71,5 +71,9 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(users_url) }
     end
+  end
+  
+  def slideshows
+    @users=User.all.map{|u| u.slideshare_user.blank? ? nil : u}.compact.sort_by(&:name) 
   end
 end

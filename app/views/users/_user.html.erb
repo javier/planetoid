@@ -1,12 +1,14 @@
+<% display_slideshows||=false %>
 <div class="span-3">
 	<%= link_to image_tag(url_for_gravatar(user.email), :alt => h(user.name), :title => h(user.name)), user_slug_path(user) if PLANETOID_CONF[:layout][:users][:show_avatar] %>
 </div>
-<div class="span-5 last">
+<div class="span-5 <%=display_slideshows ? nil : 'last'%>">
 	<h3><strong><%= link_to(h(user.name),user_slug_path(user.to_param)) %></strong></h3>
 	<p>
 		<%= link_to(user.blog_url.gsub("http://", ""), user.blog_url, :title=>'blog') + "<br />" if !user.blog_url.blank? %>
 		<%= link_to(user.twitter_url.gsub("http://", ""), user.twitter_url, :title=>'twitter') + "<br />" if !user.twitter_user.blank? %>
 		<%= link_to(user.github_url.gsub("http://", ""), user.github_url, :title=>'github') + "<br />" if !user.github_user.blank? %>
+		<%= link_to(user.slideshare_url.gsub("http://", ""), user.slideshare_url, :title=>'slideshare') + "<br />" if !user.slideshare_user.blank? %>
 		<%= user.projects.map {|p| "#{link_to(h(p.name), p.url)}"}.join(", ", :title=>'projects') if user.projects.size > 0 %>
 	</p>
 	<% if admin? %>
@@ -16,3 +18,8 @@
 	</p>
 	<% end %>
 </div>
+<%if display_slideshows%>
+	<div class="span-14 last">
+		<%= render :partial=>'slideshow', :locals=>{:user=>user}%>
+	</div>	
+<%end%>
