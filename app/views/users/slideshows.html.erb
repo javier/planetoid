@@ -1,0 +1,11 @@
+<div class="span-24 last">	
+  <h2>Slideshows</h2>
+  <hr/>
+</div>
+
+<div class="span-24 last">
+	<% @users.each do |user| %>
+		<%= render :partial => 'users/user', :locals => { :user => user, :display_slideshows => true }  %>
+		<%= "<hr />" if user != @users.last %>
+	<% end %>
+</div>
