@@ -3,9 +3,10 @@
 
 <html lang="en">
 <head>
+	<%rss_link=PLANETOID_CONF[:site][:feed_url].to_s.blank? ? entries_url(:format => :rss) : PLANETOID_CONF[:site][:feed_url].to_s %>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title><%= PLANETOID_CONF[:site][:title] %></title>
-	<link rel="alternate" type="application/rss+xml" title="<%= PLANETOID_CONF[:site][:title] %> feed" href="<%= PLANETOID_CONF[:site][:feed_url].to_s.blank? ? entries_url(:format => :rss) : PLANETOID_CONF[:site][:feed_url].to_s %>" />
+	<link rel="alternate" type="application/rss+xml" title="<%= PLANETOID_CONF[:site][:title] %> feed" href="<%= rss_link %>" />
 	<meta name="generator" content="Planetoid" /> <!-- leave this for stats -->
 	<meta name="description" content="<%= PLANETOID_CONF[:site][:description] %>">
 	<meta name="keywords" content="<%= PLANETOID_CONF[:site][:keywords] %>">
@@ -34,7 +35,7 @@
 
 
 	<div class="container contenidos">
-		<%= render :partial => 'shared/header' if PLANETOID_CONF[:layout][:home][:show_header] %>
+		<%= render :partial => 'shared/header', :locals=>{:rss_link=>rss_link} if PLANETOID_CONF[:layout][:home][:show_header] %>		
 		<%= yield %>
 		<%= render :partial => 'shared/footer'  if PLANETOID_CONF[:layout][:home][:show_footer] %>
 	</div>
