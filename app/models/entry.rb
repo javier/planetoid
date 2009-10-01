@@ -7,7 +7,8 @@ class Entry < ActiveRecord::Base
   def after_create
     begin
       if PLANETOID_CONF[:twitter][:send_updates] && self.published > self.feed.created_at
-      twit=Twitter::Base.new PLANETOID_CONF[:twitter][:user],PLANETOID_CONF[:twitter][:password]
+      httpauth = Twitter::HTTPAuth.new PLANETOID_CONF[:twitter][:user],PLANETOID_CONF[:twitter][:password]
+      twit=Twitter::Base.new(httpauth)
       twit.update "#{PLANETOID_CONF[:twitter][:update_prefix]} #{self.title[0..150]} #{self.url}"
       end
     rescue Exception => e
