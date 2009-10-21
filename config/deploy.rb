@@ -1,3 +1,4 @@
+#wadus
 set :application, "planeta"
 set :repository,  "git@github.com:javier/planetoid.git"
 set :scm, "git"
@@ -44,7 +45,7 @@ namespace :deploy do
 
   desc "Enables maintenance mode in the app"
   task :maintenance_on, :roles => :app do
-    run "cp #{shared_path}/system/maintenance.html.disabled #{shared_path}/system/maintenance.html"
+    run "cp #{shared_path}/system/maintenance.html.disabled #{current_path}/system/maintenance.html"
   end
 
   desc "Disables maintenance mode in the app"
