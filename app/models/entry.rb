@@ -14,7 +14,13 @@ class Entry < ActiveRecord::Base
       if PLANETOID_CONF[:twitter][:send_updates] && self.published > self.feed.created_at
         httpauth = Twitter::HTTPAuth.new PLANETOID_CONF[:twitter][:user],PLANETOID_CONF[:twitter][:password]
         twit=Twitter::Base.new(httpauth)
-        twit.update "#{PLANETOID_CONF[:twitter][:update_prefix]} #{self.title[0..150]} #{self.url}"
+        generic_message="#{PLANETOID_CONF[:twitter][:update_prefix]} http://planeta.aspgems.com"
+        msg="#{PLANETOID_CONF[:twitter][:update_prefix]} #{self.title[0..150]} #{self.url}"
+        if msg.size > 140
+          max_size=138 - generic_message.size
+          msg="#{generic_message} #{self.title[0..max_size]}"
+        end
+        twit.update msg
       end
     rescue Exception => e
       puts e.message
