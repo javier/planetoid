@@ -14,19 +14,19 @@ html, body {
 
 #header{	
 	min-height:30px;	
-	color:#FAD235;
+	color:#FFFFFF;
 	padding-top:10px;
 	padding-right:25px;
-	background-color:#333333;
+	background-color:#000000;
 	margin-bottom: 10px;
 }
 
 #footer{	
 	min-height:30px;	
-	color:#FAD235;
+	color:#FFFFFF;
 	padding-top:10px;
 	padding-right:25px;
-	background-color:#333333;
+	background-color:#000000;
 }
 
 #flash{	
@@ -36,7 +36,7 @@ html, body {
 
 /*links...*/
 a:link, a:active, a:visited {
-  color: #b00800;
+  color: #0968C0;
   text-decoration: none;
   padding: .5em .25em .5em .25em;
 }
@@ -58,18 +58,18 @@ h1 {
 	line-height:15px;
 }
 .links-superior li{float:right;}
-.links-superior a{color:#666666; text-decoration:none;}
-.links-superior a:hover{color:#666666; text-decoration:underline; line-height:15px}
+.links-superior a{color:#FFFFFF; text-decoration:none;}
+.links-superior a:hover{color:#FFFFFF; text-decoration:underline; line-height:15px}
 
 
 #top
 {
 	height:25px;
-	color:#999999;
+	color:#FFFFFF;
 	padding-top:10px;
 	padding-right:25px;
 	text-align:right;
-	background-color:#FAD235;
+	background-color:#000000;
 }
 
 #logo-area{	
